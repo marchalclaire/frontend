@@ -1,22 +1,77 @@
-.App {
-  text-align: center;
+/* ------------------------------------ IMPORT --------------------------------- */
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap");
+
+/* ------------------------------------ GLOBAL RULE --------------------------------- */
+
+:root {
+  --black: #1e1e1e;
+  --white: #ffffff;
+  --grey-rose: rgba(218, 210, 210, 0.817);
+  --grey-rose2: rgba(227, 203, 203, 0.817);
+  --light-grey: rgba(122, 114, 114, 0.438);
+  --grey: rgb(173, 163, 163);
 }
 
-.App-logo {
-  height: 40vmin;
-}
+/* ------------------------------------ HEADER --------------------------------- */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container-main {
+  line-height: 120px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex: 1;
+  padding: 0px 60px 0px 60px;
+}
+.container-left {
+  line-height: 120px;
+  width: 850px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.logo {
+  height: 110px;
+  display: flex;
+  margin: 5px 0px 5px 0px;
+}
+.header-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: var(--light-grey);
+}
+.container-right {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.header-title-right {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: var(--light-grey);
+
+  margin-right: 50px;
+}
+.header-title-right_1 {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: var(--light-grey);
+
+  margin-right: 50px;
+}
+.header-underline {
+  height: 6px;
+  background-color: var(--grey-rose2);
 }
 
-.App-link {
-  color: #09d3ac;
+/* ------------------------------------ HOME --------------------------------- */
+
+.hero {
+  display: flex;
+  flex: 1;
+  background-color: yellow;
+}
+.hero-img {
+  height: 465px;
+  width: 1714px;
 }
