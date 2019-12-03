@@ -16,22 +16,22 @@
 /* ------------------------------------ HEADER --------------------------------- */
 
 .container-main {
-  line-height: 120px;
+  line-height: 105px;
   display: flex;
   flex: 1;
   padding: 0px 60px 0px 60px;
 }
 .container-left {
-  line-height: 120px;
+  line-height: 105px;
   width: 850px;
   display: flex;
   justify-content: space-between;
   align-content: center;
 }
 .logo {
-  height: 110px;
+  height: 100px;
   display: flex;
-  margin: 5px 0px 5px 0px;
+  margin: 2.5px 0px 2.5px 0px;
 }
 .header-title {
   font-family: "Poppins", sans-serif;
@@ -44,24 +44,23 @@
   justify-content: flex-end;
 }
 .icone-profile {
-  position: absolute;
-  top: 32px;
-  left: 1280px;
-
+  position: relative;
+  top: 30px;
+  left: -100px;
 }
 .header-title-right {
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   color: var(--light-grey);
-  position: relative;
-  margin-right: 90px;
+  position: absolute;
 }
 .header-title-right_1 {
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   color: var(--light-grey);
+  margin-left: 40px;
 }
 .header-underline {
   height: 6px;
@@ -70,7 +69,11 @@
 
 /* ------------------------------------ HOME --------------------------------- */
 .container-home {
-  display:flex;
+  display: flex;
+  justify-content: center;
+}
+.main-hero {
+  display: flex;
   justify-content: center;
 }
 .hero {
@@ -80,18 +83,18 @@
   background-repeat: no-repeat;
   height: 367px;
   width: 1658px;
-  margin:10px;
+  margin: 0px 10px 0px 10px;
 }
 /* effet wave bas de photo : */
 .wave {
-  margin-top:-100px;
-  height: 90px;
+  margin-top: -100px;
+  height: 110px;
 }
 .cls-1 {
-fill: white;
+  fill: white;
 }
 .input {
-  margin-top: 105px;
+  margin-top: 95px;
   width: 700px;
   height: 44px;
   padding: 0px 20px 0px 20px;
@@ -101,15 +104,58 @@ fill: white;
 }
 .wrapper {
   display: flex;
-  flex: row;
+  flex-direction: column;
   width: 1200px;
-  /* height: 500px; */
-  background-color: yellow;
   justify-content: space-between;
 }
 .wrapper-title {
   font-family: "Poppins", sans-serif;
   font-size: 25px;
+  font-weight: bold;
   color: var(--black);
-  margin-bottom: 30px;
+}
+.slides-shop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px 0px 30px 0px;
+}
+
+/* ------------------- slide-shop ------------------ */
+
+.slide-shop {
+  height: 360px;
+  width: 380px;
+}
+.img-slide-shop {
+  height: 200px;
+  width: 380px;
+  border-radius: 20px;
+}
+.text-slide-shop {
+  display: flex;
+  flex-direction: column;
+}
+.title-slide-shop {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: var(--grey);
+}
+.city-slide-shop {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: var(--grey-rose);
+}
+.reviews-slide-shop {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 10px;
+  color: var(--black);
+}
+.description-slide-shop {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: var(--black);
 }
