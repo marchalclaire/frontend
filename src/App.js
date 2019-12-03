@@ -5,6 +5,7 @@ import Home from "./containers/Home";
 import Shops from "./containers/Shops";
 import Shop from "./containers/Shop";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 // import Cookie from "js-cookie";
 
 const App = () => {
@@ -31,7 +32,7 @@ const App = () => {
           <Home />
         </Route>
       </Switch>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </Router>
   );
 };

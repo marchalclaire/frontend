@@ -59,10 +59,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <h1>Bienvenue sur la page Home !!</h1>
-      <Link to={"/shops"}>
-        <span>Lien vers shops</span>
-      </Link>
     </>
   );
 };
