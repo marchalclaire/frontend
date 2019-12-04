@@ -14,9 +14,18 @@ const Card = props => {
           <div className="text-slide-shop">
             <span className="title-slide-shop">{props.title}</span>
             <span className="city-slide-shop">{props.city}</span>
-            <span className="reviews-slide-shop">
-              {props.averageRating} reviews
-            </span>
+            <div className="reviews-stars-container">
+              <span className="reviews-slide-shop">
+                {props.averageRating} reviews
+              </span>
+              <div className="container-stars">
+                <span className="icon-star-full"></span>
+                <span className="icon-star-full"></span>
+                <span className="icon-star-full"></span>
+                <span className="icon-star-full"></span>
+                <span className="icon-star-full1"></span>
+              </div>
+            </div>
             <span className="description-slide-shop">{props.description}</span>
           </div>
         </div>

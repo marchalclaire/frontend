@@ -10,7 +10,35 @@
   --grey-rose: rgba(218, 210, 210, 0.817);
   --grey-rose2: rgba(227, 203, 203, 0.817);
   --light-grey: rgba(122, 114, 114, 0.438);
+  --light-grey2: rgba(138, 133, 133, 0.226);
   --grey: rgb(173, 163, 163);
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icomoon.eot?gkktuh");
+  src: url("fonts/icomoon.eot?gkktuh#iefix") format("embedded-opentype"),
+    url("fonts/icomoon.ttf?gkktuh") format("truetype"),
+    url("fonts/icomoon.woff?gkktuh") format("woff"),
+    url("fonts/icomoon.svg?gkktuh#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* ------------------------------------ HEADER --------------------------------- */
@@ -153,11 +181,20 @@
   font-size: 15px;
   color: var(--grey-rose);
 }
+.reviews-stars-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
 .reviews-slide-shop {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   font-size: 10px;
   color: var(--black);
+  margin-right: 10px;
+  position: absolute;
+  right: 230px;
+  top: 2px;
 }
 .description-slide-shop {
   font-family: "Poppins", sans-serif;
@@ -186,14 +223,14 @@
   display: flex;
   justify-content: center;
   flex: 1;
-  line-height: 100px;
+  line-height: 40px;
   background-color: var(--grey-rose2);
+  padding: 10px;
 }
 .wrapper-shop {
   display: flex;
   flex-direction: column;
   width: 1200px;
-  background-color: var(--light-grey);
 }
 .main-container-shop {
   display: flex;
@@ -202,8 +239,109 @@
 .container-left-shop {
   display: flex;
   flex-direction: column;
+  width: 850px;
 }
 .container-right-shop {
   display: flex;
   flex-direction: row;
+  flex: 1;
 }
+.shop-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  color: var(--white);
+}
+.shop-category {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--grey);
+}
+.shop-update {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--grey);
+  margin-right: 150px;
+}
+.img-shop {
+  width: 720px;
+  height: 360px;
+  border-radius: 20px;
+  margin: 40px 0px 40px 0px;
+}
+.shop-reviews {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: var(--black);
+}
+.shop-descritpion {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: var(--black);
+  margin: 20px 130px 40px 0px;
+}
+
+/* ------------------- reviews ------------------ */
+
+.container-right-shop2 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.shop-add-reviews-container {
+  margin: 40px 0px 40px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 180px;
+}
+.shop-add-reviews {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  border: 1px solid var(--grey-rose2);
+  padding: 10px 10px 10px 10px;
+  border-radius: 8px;
+  background-color: var(--grey-rose2);
+  cursor: pointer;
+}
+.shop-list-reviews {
+  background-color: var(--light-grey2);
+  flex: 1;
+  border: 1px solid var(--light-grey2);
+  padding: 10px 10px 10px 10px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+.icon-star-full:before {
+  content: "\e9d9";
+  color: gold;
+}
+.icon-star-full1:before {
+  content: "\e9d9";
+  color: grey;
+}
+/* .icon-star-empty:before {
+  content: "\e9d7";
+  color: black;
+} 
+
+/* .icon-pencil2:before {
+  content: "\e906";
+}
+.icon-search:before {
+  content: "\e986";
+}
+
+
+.icon-heart:before {
+  content: "\e9da";
+}
+.icon-mail2:before {
+  content: "\ea84";
+} */
