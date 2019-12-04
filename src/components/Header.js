@@ -18,8 +18,8 @@ const Header = () => {
           <svg
             className="icone-profile"
             xmlns="http://www.w3.org/2000/svg"
-            width="34"
-            height="34"
+            width="28"
+            height="28"
             viewBox="0 0 512 512"
             fill="rgba(122, 114, 114, 0.438)"
             stroke="currentColor"

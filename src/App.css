@@ -73,7 +73,7 @@
 }
 .icone-profile {
   position: relative;
-  top: 30px;
+  top: 35px;
   left: -100px;
 }
 .header-title-right {
@@ -216,8 +216,15 @@
   font-size: 15px;
   color: var(--white);
 }
+.icon-mail2:before {
+  content: "\ea84";
+  color: white;
+  margin-right: 7px;
+}
 
 /* ------------------------------------ SHOP --------------------------------- */
+
+/* ------------------ top bar ----------------- */
 
 .shop-top {
   display: flex;
@@ -263,8 +270,26 @@
   font-size: 17px;
   font-weight: bold;
   color: var(--grey);
-  margin-right: 150px;
+  margin-right: 100px;
 }
+.shop-favorite {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--grey);
+}
+.icon-heart:before {
+  content: "\e9da";
+  color: var(--grey);
+  margin-right: 10px;
+}
+.icon-pencil2:before {
+  content: "\e906";
+  color: var(--grey);
+  margin-right: 10px;
+}
+
+/* ------------------ fiche shop ----------------- */
 .img-shop {
   width: 720px;
   height: 360px;
@@ -276,6 +301,14 @@
   font-weight: bold;
   font-size: 15px;
   color: var(--black);
+}
+.icon-star-full:before {
+  content: "\e9d9";
+  color: gold;
+}
+.icon-star-full1:before {
+  content: "\e9d9";
+  color: grey;
 }
 .shop-descritpion {
   font-family: "Poppins", sans-serif;
@@ -318,30 +351,12 @@
   border-radius: 8px;
   margin-bottom: 40px;
 }
-.icon-star-full:before {
-  content: "\e9d9";
-  color: gold;
-}
-.icon-star-full1:before {
-  content: "\e9d9";
-  color: grey;
-}
+
 /* .icon-star-empty:before {
   content: "\e9d7";
   color: black;
 } 
 
-/* .icon-pencil2:before {
-  content: "\e906";
-}
 .icon-search:before {
   content: "\e986";
-}
-
-
-.icon-heart:before {
-  content: "\e9da";
-}
-.icon-mail2:before {
-  content: "\ea84";
 } */

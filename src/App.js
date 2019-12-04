@@ -19,8 +19,8 @@ const App = () => {
 
         <Route path="/user/register"></Route>
 
-        {/* <Route path="/shop/:identifiant"> */}
-        <Route path="/shop">
+        {/* ajouter dans Route :identifiant" pour le passage à la page Shop gràce à l'"identifiant" */}
+        <Route path="/shop/:identifiant">
           <Shop />
         </Route>
 

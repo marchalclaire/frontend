@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 const Card = props => {
   return (
     <>
-      <Link className="link" to={"/shop"}>
+      {/* On ajoute dans la Route "+ props._id" pour passer au clic sur slide-shop dans Shops à Shop gràce à l'identifiant: */}
+      <Link className="link" to={"/shop/" + props._id}>
         <div className="slide-shop">
           <img
             className="img-slide-shop"

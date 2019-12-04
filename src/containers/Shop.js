@@ -1,23 +1,44 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+// import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "../App.css";
-import Shop_1 from "../shop_3.jpg";
-import Reviews from "../reviews.jpg";
 
 const Shop = () => {
+  const params = useParams();
+  const [card, setCard] = useState([]);
+
+  const fetchData = async () => {
+    const response = await axios.get(
+      "http://localhost:4000/shop/read?id=" + params.identifiant //URL idem postman
+    );
+    setCard(response.data);
+    // console.log(response.data);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <>
       <div className="shop-top">
         <div className="wrapper-shop">
           <div className="main-container-shop">
             <div className="container-left-shop">
-              <span className="shop-title">L'appartement</span>
-              <span className="shop-category">Creative Shop in Paris</span>
+              <span className="shop-title">{card.title}</span>
+              <span className="shop-category">
+                {card.category} in {card.city}
+              </span>
             </div>
 
             <div className="container-right-shop">
-              <span className="shop-update">Update</span>
-              <span className="shop-category">Add to favorite</span>
+              <div className="update-container">
+                <span className="icon-pencil2"></span>
+                <span className="shop-update">Update</span>
+              </div>
+              <div className="update-container">
+                <span className="icon-heart"></span>
+                <span className="shop-favorite">Add to favorite</span>
+              </div>
             </div>
           </div>
         </div>
@@ -27,7 +48,11 @@ const Shop = () => {
         <div className="wrapper-shop">
           <div className="main-container-shop">
             <div className="container-left-shop">
-              <img className="img-shop" src={Shop_1} alt={Shop_1}></img>
+              <img
+                className="img-shop"
+                src={card.photos}
+                alt={card.photos}
+              ></img>
               <span className="shop-reviews">3 reviews</span>
               <div className="container-stars">
                 <span className="icon-star-full"></span>
@@ -36,20 +61,7 @@ const Shop = () => {
                 <span className="icon-star-full"></span>
                 <span className="icon-star-full1"></span>
               </div>
-              <span className="shop-descritpion">
-                Un showroom lumineux ouvert à tous pour découvrir, essayer et
-                commander. Et si on trouvera sur les cintres les deux
-                collections de la griffe (automne/hiver et printemps/été) dans
-                toutes les tailles, les clientes pourront également découvrir en
-                exclusivité les éphémères et très prisées collections capsule
-                (disponibles chaque mois en édition limitée) dans un coin dédié,
-                un « mur » au fond du magasin. Mais si on peut scruter le
-                vestiaire Sézane, de la besace aux bottines, il n'est pas
-                question pour autant de repartir avec son butin. «
-                L'appartement, c'est une boutique connectée, ajoute Margaux.
-                Pour Morgane, il était essentiel de conserver l'aspect digital
-                de la griffe.
-              </span>
+              <span className="shop-descritpion">{card.description}</span>
             </div>
             <div className="container-right-shop2">
               <div className="shop-add-reviews-container">
