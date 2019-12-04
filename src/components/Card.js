@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import LinesEllipsis from "react-lines-ellipsis";
 
 const Card = props => {
   return (
@@ -27,7 +28,16 @@ const Card = props => {
                 <span className="icon-star-full1"></span>
               </div>
             </div>
-            <span className="description-slide-shop">{props.description}</span>
+
+            {/* limiter l'affichage d'un texte, importer en haut ellipsis puis installer (npm install --save react-lines-ellipsis), puis : */}
+            <LinesEllipsis
+              className="description-slide-shop"
+              text={props.description}
+              maxLine="3"
+              ellipsis="..."
+              trimRight
+              basedOn="letters"
+            ></LinesEllipsis>
           </div>
         </div>
       </Link>

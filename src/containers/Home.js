@@ -41,7 +41,13 @@ const Home = () => {
       </div>
       <div className="container-home">
         <div className="wrapper">
-          <span className="wrapper-title">Nos coups de coeur</span>
+          <div className="wrapper-container">
+            <div className="wrapper-title-container">
+              <span className="wrapper-title">Nos coups de coeur</span>
+              <span className="icon-heart1"></span>
+            </div>
+            <span className="wrapper-title">view all</span>
+          </div>
           <div className="slides-shop">
             {cards.map((card, index) => {
               // Ici le spread va transmettre tout le contenu de `cards` en tant que props au composant card
@@ -49,7 +55,12 @@ const Home = () => {
               return <Card key={card.id} {...card} />;
             })}
           </div>
-          <span className="wrapper-title">Nos nouvelles adresses Shopping</span>
+          <div className="wrapper-container">
+            <span className="wrapper-title">
+              Nos nouvelles adresses Shopping
+            </span>
+            <span className="wrapper-title">view all</span>
+          </div>
           <div className="slides-shop">
             {cards.map((card, index) => {
               // Ici le spread va transmettre tout le contenu de `cards` en tant que props au composant card
