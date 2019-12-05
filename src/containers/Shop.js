@@ -8,6 +8,17 @@ const Shop = () => {
   const params = useParams();
   const [card, setCard] = useState([]);
 
+  //pour afficher les étoiles colorées jaune ou gris en fonction de l'averageRating :
+  const stars = [];
+
+  for (let i = 0; i < 5; i++) {
+    if (i < card.averageRating) {
+      stars.push(<span className="icon-star-full"></span>);
+    } else {
+      stars.push(<span className="icon-star-full1"></span>);
+    }
+  }
+
   const fetchData = async () => {
     const response = await axios.get(
       "http://localhost:4000/shop/read?id=" + params.identifiant //URL idem postman
@@ -54,13 +65,7 @@ const Shop = () => {
                 alt={card.photos}
               ></img>
               <span className="shop-reviews">3 reviews</span>
-              <div className="container-stars">
-                <span className="icon-star-full"></span>
-                <span className="icon-star-full"></span>
-                <span className="icon-star-full"></span>
-                <span className="icon-star-full"></span>
-                <span className="icon-star-full1"></span>
-              </div>
+              <div className="container-stars">{stars}</div>
               <span className="shop-descritpion">{card.description}</span>
             </div>
             <div className="container-right-shop2">

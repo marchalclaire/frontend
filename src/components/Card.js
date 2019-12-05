@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
 
 const Card = props => {
+  const stars = [];
+  for (let i = 0; i < 5; i++) {
+    if (i < props.averageRating) {
+      stars.push(<span className="icon-star-full"></span>);
+    } else {
+      stars.push(<span className="icon-star-full1"></span>);
+    }
+  }
+
   return (
     <>
       {/* On ajoute dans la Route "+ props._id" pour passer au clic sur slide-shop dans Shops à Shop gràce à l'identifiant: */}
@@ -20,13 +29,7 @@ const Card = props => {
               <span className="reviews-slide-shop">
                 {props.averageRating} reviews
               </span>
-              <div className="container-stars">
-                <span className="icon-star-full"></span>
-                <span className="icon-star-full"></span>
-                <span className="icon-star-full"></span>
-                <span className="icon-star-full"></span>
-                <span className="icon-star-full1"></span>
-              </div>
+              <div className="container-stars">{stars}</div>
             </div>
 
             {/* limiter l'affichage d'un texte, importer en haut ellipsis puis installer (npm install --save react-lines-ellipsis), puis : */}

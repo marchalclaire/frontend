@@ -150,6 +150,7 @@
   content: "\e9da";
   color: var(--grey-rose2);
   margin-left: 10px;
+  font-size: 23px;
 }
 .slides-shop {
   display: flex;
@@ -229,6 +230,7 @@
   content: "\ea84";
   color: white;
   margin-right: 7px;
+  font-size: 20px;
 }
 
 /* ------------------------------------ SHOP --------------------------------- */
