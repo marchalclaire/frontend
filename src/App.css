@@ -363,6 +363,15 @@
   margin-bottom: 40px;
 }
 
+/* ------------------------------------ SHOP --------------------------------- */
+
+.icon-heart1:before {
+  content: "\e9da";
+  color: white;
+  margin-left: 15px;
+  font-size: 25px;
+}
+
 /* .icon-star-empty:before {
   content: "\e9d7";
   color: black;
