@@ -46,7 +46,9 @@ const Home = () => {
               <span className="wrapper-title">Nos coups de coeur</span>
               <span className="icon-heart1"></span>
             </div>
-            <span className="wrapper-title">view all</span>
+            <Link className="link" to={"/shops"}>
+              <span className="wrapper-title">view all</span>
+            </Link>
           </div>
           <div className="slides-shop">
             {cards.map((card, index) => {
@@ -59,7 +61,9 @@ const Home = () => {
             <span className="wrapper-title">
               Nos nouvelles adresses Shopping
             </span>
-            <span className="wrapper-title">view all</span>
+            <Link className="link" to={"/shops/"}>
+              <span className="wrapper-title">view all</span>
+            </Link>
           </div>
           <div className="slides-shop">
             {cards.map((card, index) => {
