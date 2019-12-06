@@ -11,7 +11,20 @@ const Header = () => {
           <Link to={"/home"}>
             <img className="logo" src={Logo} alt={Logo}></img>
           </Link>
-          <span className="header-title">Shop by Category</span>
+          <div className="dropdown-container">
+            <div class="dropdown">
+              <div class="menu-liste-deroulante">Shop by Category</div>
+              <div class="dropdown-child">
+                <span>CASUAL</span>
+                <span>CREATIVE</span>
+                <span>LUXURY</span>
+                <span>STREET-WEAR</span>
+                <span>ACCESSORIES</span>
+                <span>JEWELS</span>
+              </div>
+            </div>
+          </div>
+
           <span className="header-title">Choose your City</span>
         </div>
         <div className="container-right">

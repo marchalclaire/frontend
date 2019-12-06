@@ -7,7 +7,10 @@ const Home = () => {
   const [cards, setCards] = useState([]);
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:4000/shop/readall");
+    //appel au back d'une reuête paginée à 3 article par page:
+    const response = await axios.post("http://localhost:4000/shop/findshops", {
+      maxNumber: 3
+    });
     console.log(response.data);
     setCards(response.data);
   };
@@ -46,7 +49,8 @@ const Home = () => {
               <span className="wrapper-title">Nos coups de coeur</span>
               <span className="icon-heart1"></span>
             </div>
-            <Link className="link" to={"/shops/"}>
+            {/* on ajoute coup de coeur au lien pour déclencher le filtre */}
+            <Link className="link" to={"/shops/coupdecoeur"}>
               <span className="wrapper-title">view all</span>
             </Link>
           </div>
@@ -61,8 +65,9 @@ const Home = () => {
             <span className="wrapper-title">
               Nos nouvelles adresses Shopping
             </span>
-
-            <span className="wrapper-title">view all</span>
+            <Link className="link" to={"/shops/newshops"}>
+              <span className="wrapper-title">view all</span>
+            </Link>
           </div>
           <div className="slides-shop">
             {cards.map((card, index) => {

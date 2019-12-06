@@ -7,7 +7,9 @@ const Shops = () => {
   const [cards, setCards] = useState([]);
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:4000/shop/readall");
+    const response = await axios.post("http://localhost:4000/shop/findshops", {
+      averageRating: 5
+    });
     console.log(response.data);
     setCards(response.data);
   };
