@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import LinesEllipsis from "react-lines-ellipsis";
 
-//props transmises par le container HOME via l'appel l'AXIOS :
+//props transmises par le container HOME via l'appel l'AXIOS et .map :
 const Card = props => {
   const stars = [];
   for (let i = 0; i < 5; i++) {
