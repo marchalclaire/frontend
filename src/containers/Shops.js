@@ -2,19 +2,51 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Card from "../components/Card.js";
+import { useParams } from "react-router-dom";
 
 const Shops = () => {
+  //on récupère les paramètres query de l'url de la page (pour savoir sur quelle page on est et faire les bons filtres)
+  const params = useParams();
   const [cards, setCards] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1); //état pour pagination
 
-  const fetchData = async () => {
-    const response = await axios.post("http://localhost:4000/shop/findshops", {
-      averageRating: 5
-    });
-    console.log(response.data);
+  //on passe le paramètre "page" pour éviter désyncro de l'état:
+  const fetchData = async page => {
+    //on crée un obj vide contenant les paramètres à envoyer au back :
+    let requestParams = {};
+    let limit = 3;
+
+    //j'ajoute la clé "limit" à l'objet avant de l'envoyer au back (clé necessaire à la pagination):
+    requestParams.limit = limit;
+
+    let skip = 0;
+
+    if (page === 1) {
+      skip = 0;
+    } else {
+      skip = limit * (page - 1);
+    }
+
+    //j'ajoute la clé "skip" à l'objet avant de l'envoyer au back (clé necessaire à la pagination):
+    requestParams.skip = skip;
+
+    if (params.type === "coupdecoeur") {
+      requestParams.averageRating = 4;
+    }
+    // } else if (params.type === "coupdecoeur") {
+    //   requestParams.averageRating = 4;
+    // }
+
+    const response = await axios.post(
+      "http://localhost:4000/shop/findshops",
+      //j'envoie les paramètres définis au dessus au back:
+      requestParams
+    );
+    // console.log(response.data);
     setCards(response.data);
   };
   useEffect(() => {
-    fetchData();
+    fetchData(1);
   }, []);
 
   return (
@@ -39,6 +71,25 @@ const Shops = () => {
             })}
           </div>
         </div>
+      </div>
+      <div clasName="container-pagination">
+        <button
+          onClick={() => {
+            fetchData(currentPage - 1); // on passe ce paramètre "currentPage - 1", car soucis car désyncro entre état de currentPage et la vrai page en cours.
+            setCurrentPage(currentPage - 1); //on set l'état pour affichage de la page en cours (pagination)
+          }}
+        >
+          avant
+        </button>
+        <span>{currentPage}</span>
+        <button
+          onClick={() => {
+            fetchData(currentPage + 1);
+            setCurrentPage(currentPage + 1);
+          }}
+        >
+          après
+        </button>
       </div>
     </>
   );

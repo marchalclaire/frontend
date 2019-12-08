@@ -9,7 +9,7 @@ const Home = () => {
   const fetchData = async () => {
     //appel au back d'une reuête paginée à 3 article par page:
     const response = await axios.post("http://localhost:4000/shop/findshops", {
-      maxNumber: 3
+      limit: 3
     });
     console.log(response.data);
     setCards(response.data);
@@ -63,9 +63,9 @@ const Home = () => {
           </div>
           <div className="wrapper-container">
             <span className="wrapper-title">
-              Nos nouvelles adresses Shopping
+              Nos adresses Shopping par ville
             </span>
-            <Link className="link" to={"/shops/newshops"}>
+            <Link className="link" to={"/shops/shopsbycity"}>
               <span className="wrapper-title">view all</span>
             </Link>
           </div>
