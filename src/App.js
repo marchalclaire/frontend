@@ -23,8 +23,8 @@ const App = () => {
         <Route path="/shop/:identifiant">
           <Shop />
         </Route>
-        {/* :type permet de filtrer en fonction du bouton sur lequel l'utilisateur a cliqué (affichage shops par coup de coeur, date, category, ville...) */}
-        <Route path="/shops/:type">
+        {/* :type et value permet de filtrer en fonction du bouton sur lequel l'utilisateur a cliqué (affichage shops par coup de coeur, city) */}
+        <Route path="/shops/:type/:value">
           <Shops />
         </Route>
 

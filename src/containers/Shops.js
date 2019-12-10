@@ -31,11 +31,13 @@ const Shops = () => {
     requestParams.skip = skip;
 
     if (params.type === "coupdecoeur") {
-      requestParams.averageRating = 4;
+      requestParams.averageRating = 4; //envoie 4 au backend qui lui fera des conditions et filtrera affichage à >= 4.
+    } else if (params.type === "shopsbycity") {
+      //value créée dans route App.js
+      if (params.value) {
+        requestParams.city = params.value; //on ajoute la clé city à l'objet "requestParams" et on envoie au back la valeur de la clé "city" qui est = à value (si clic sur Paris, value=Paris...)
+      }
     }
-    // } else if (params.type === "coupdecoeur") {
-    //   requestParams.averageRating = 4;
-    // }
 
     const response = await axios.post(
       "http://localhost:4000/shop/findshops",
@@ -75,7 +77,7 @@ const Shops = () => {
       <div className="container-pagination">
         <button
           className="button-pagination"
-          // si la page en cours =1, passer le bouton en "disabled" (ajouté dans App.css même si a déjà sa propre css), bouton désactivé
+          // si on est sur page 1, bouton "disabled" (a sa propre css, bouton grisé et désactivé, mais il faut ajouter la classe "button :disabled " dans App.css )
           disabled={currentPage === 1}
           onClick={() => {
             fetchData(currentPage - 1); // on passe ce paramètre "currentPage - 1", car soucis car désyncro entre état de currentPage et la vrai page en cours.

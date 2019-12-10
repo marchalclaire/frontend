@@ -5,18 +5,19 @@ import { Link } from "react-router-dom";
 const Card = props => {
   return (
     <>
-      {/* <Link className="link" to={"/shop/" + props._id}> */}
-      <div className="slide-shop">
-        <img
-          className="img-slide-shop"
-          src={props.photoCity}
-          alt={props.photoCity}
-        ></img>
-        <div className="text-slide-shop">
-          <span className="title-slide-shop">{props.city}</span>
+      {/* props.city = value (indiqué dans URL App.js), infos qu'on envoie à Shops */}
+      <Link className="link" to={"/shops/shopsbycity/" + props.city}>
+        <div className="slide-shop">
+          <img
+            className="img-slide-shop"
+            src={props.photoCity}
+            alt={props.photoCity}
+          ></img>
+          <div className="text-slide-shop">
+            <span className="title-slide-shop">{props.city}</span>
+          </div>
         </div>
-      </div>
-      {/* </Link> */}
+      </Link>
     </>
   );
 };

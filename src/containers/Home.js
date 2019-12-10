@@ -70,14 +70,14 @@ const Home = () => {
               Nos adresses Shopping par ville
             </span>
           </div>
-          <Link className="link" to={"/shops/shopsbycity"}>
-            {/* <Link className="link" to={"/shop/" + props._id}> */}
-            <div className="slides-shop">
-              <CardCity photoCity={London} city="Londres"></CardCity>
-              <CardCity photoCity={Paris} city="Paris"></CardCity>
-              <CardCity photoCity={Bruxelles} city="Bruxelles"></CardCity>
-            </div>
-          </Link>
+          {/* <Link className="link" to={"/shops/shopsbycity/" + props.city}> */}
+
+          <div className="slides-shop">
+            <CardCity photoCity={London} city="Londres"></CardCity>
+            <CardCity photoCity={Paris} city="Paris"></CardCity>
+            <CardCity photoCity={Bruxelles} city="Bruxelles"></CardCity>
+          </div>
+          {/* </Link>  */}
         </div>
       </div>
     </>
