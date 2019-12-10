@@ -9,6 +9,7 @@ const Shops = () => {
   const params = useParams();
   const [cards, setCards] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); //état pour pagination
+  const [title, setTitle] = useState("");
 
   //on passe le paramètre "page" pour éviter désyncro de l'état:
   const fetchData = async page => {
@@ -32,10 +33,12 @@ const Shops = () => {
 
     if (params.type === "coupdecoeur") {
       requestParams.averageRating = 4; //envoie 4 au backend qui lui fera des conditions et filtrera affichage à >= 4.
+      setTitle("Coup de coeur");
     } else if (params.type === "shopsbycity") {
       //value créée dans route App.js
       if (params.value) {
         requestParams.city = params.value; //on ajoute la clé city à l'objet "requestParams" et on envoie au back la valeur de la clé "city" qui est = à value (si clic sur Paris, value=Paris...)
+        setTitle("Sélection de boutiques à " + params.value);
       }
     }
 
@@ -57,7 +60,7 @@ const Shops = () => {
         <div className="wrapper-shop">
           <div className="main-container-shop">
             <div className="container-left-shops">
-              <span className="shop-title">Nos coups de coeurs</span>
+              <span className="shop-title">{title}</span>
               <span className="icon-heart1"></span>
             </div>
           </div>
