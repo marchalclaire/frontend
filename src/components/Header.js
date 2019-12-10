@@ -2,7 +2,6 @@ import React from "react";
 import Logo from "../logo.jpg";
 import { Link } from "react-router-dom";
 import "../App.css";
-import Dropdown from "../components/Dropdown.js";
 
 const Header = () => {
   return (
@@ -12,25 +11,10 @@ const Header = () => {
           <Link to={"/home"}>
             <img className="logo" src={Logo} alt={Logo}></img>
           </Link>
-          {/* on appel le composant lisgte déroulante Dropdown auquel on passe la props title : */}
-          <Dropdown
-            mainTitle="Shop by Category"
-            category1="Casual"
-            category2="Creative"
-            category3="luxury"
-            category4="Street-Wear"
-            category5="Accessories"
-            category6="Jewels"
-          ></Dropdown>
-          <Dropdown
-            mainTitle="Choose your City"
-            category1="Paris"
-            category2="London"
-            category3="Bruxelles"
-            category4="Berlin"
-            category5="Madrid"
-            category6="Rome"
-          ></Dropdown>
+          {/* on appel le composant liste déroulante Dropdown auquel on passe la props title : */}
+
+          <div className="menu-liste-deroulante">Shops par categorie</div>
+          <div className="menu-liste-deroulante">Shops par ville</div>
         </div>
         <div className="container-right">
           <svg

@@ -53,8 +53,8 @@ const Home = () => {
               <span className="wrapper-title">Nos coups de coeur</span>
               <span className="icon-heart1"></span>
             </div>
-            {/* on ajoute coup de coeur au lien pour déclencher le filtre */}
-            <Link className="link" to={"/shops/coupdecoeur"}>
+            {/* on ajoute coup de coeur au lien pour déclencher le filtre, on donne la valeur "all" à "value", voir détail route dans App.js */}
+            <Link className="link" to={"/shops/coupdecoeur/all"}>
               <span className="wrapper-title">view all</span>
             </Link>
           </div>

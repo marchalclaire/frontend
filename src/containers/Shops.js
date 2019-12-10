@@ -14,7 +14,7 @@ const Shops = () => {
   const fetchData = async page => {
     //on crée un obj vide contenant les paramètres à envoyer au back :
     let requestParams = {};
-    let limit = 3;
+    let limit = 6;
 
     //j'ajoute la clé "limit" à l'objet avant de l'envoyer au back (clé necessaire à la pagination):
     requestParams.limit = limit;
