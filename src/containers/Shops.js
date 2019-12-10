@@ -72,23 +72,25 @@ const Shops = () => {
           </div>
         </div>
       </div>
-      <div clasName="container-pagination">
+      <div className="container-pagination">
         <button
+          className="button-pagination"
           onClick={() => {
             fetchData(currentPage - 1); // on passe ce paramètre "currentPage - 1", car soucis car désyncro entre état de currentPage et la vrai page en cours.
             setCurrentPage(currentPage - 1); //on set l'état pour affichage de la page en cours (pagination)
           }}
         >
-          avant
+          page précédente
         </button>
         <span>{currentPage}</span>
         <button
+          className="button-pagination"
           onClick={() => {
             fetchData(currentPage + 1);
             setCurrentPage(currentPage + 1);
           }}
         >
-          après
+          page suivante
         </button>
       </div>
     </>

@@ -407,7 +407,7 @@
   margin-bottom: 40px;
 }
 
-/* ------------------------------------ SHOP --------------------------------- */
+/* ------------------------------------ SHOPS --------------------------------- */
 
 .icon-heart1:before {
   content: "\e9da";
@@ -416,6 +416,22 @@
   font-size: 25px;
 }
 
+.container-pagination {
+  line-height: 30px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.container-pagination span {
+  margin: 0px 20px 0px 20px;
+}
+
+.button-pagination {
+  width: 102px;
+  height: 30px;
+}
 /* .icon-star-empty:before {
   content: "\e9d7";
   color: black;
