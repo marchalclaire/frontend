@@ -432,6 +432,8 @@
   width: 102px;
   height: 30px;
 }
+button :disabled {
+}
 /* .icon-star-empty:before {
   content: "\e9d7";
   color: black;

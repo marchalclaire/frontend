@@ -75,6 +75,8 @@ const Shops = () => {
       <div className="container-pagination">
         <button
           className="button-pagination"
+          // si la page en cours =1, passer le bouton en "disabled" (ajouté dans App.css même si a déjà sa propre css), bouton désactivé
+          disabled={currentPage === 1}
           onClick={() => {
             fetchData(currentPage - 1); // on passe ce paramètre "currentPage - 1", car soucis car désyncro entre état de currentPage et la vrai page en cours.
             setCurrentPage(currentPage - 1); //on set l'état pour affichage de la page en cours (pagination)
