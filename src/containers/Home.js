@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Card from "../components/Card.js";
+import CardCity from "../components/CardCity.js";
+import London from "../london.jpg";
+import Paris from "../paris.png";
+import Bruxelles from "../bruxelles.jpg";
 
 const Home = () => {
   const [cards, setCards] = useState([]);
@@ -65,17 +69,15 @@ const Home = () => {
             <span className="wrapper-title">
               Nos adresses Shopping par ville
             </span>
-            <Link className="link" to={"/shops/shopsbycity"}>
-              <span className="wrapper-title">view all</span>
-            </Link>
           </div>
-          <div className="slides-shop">
-            {cards.map((card, index) => {
-              // Ici le spread va transmettre tout le contenu de `cards` en tant que props au composant card
-
-              return <Card key={card.id} {...card} />;
-            })}
-          </div>
+          <Link className="link" to={"/shops/shopsbycity"}>
+            {/* <Link className="link" to={"/shop/" + props._id}> */}
+            <div className="slides-shop">
+              <CardCity photoCity={London} city="Londres"></CardCity>
+              <CardCity photoCity={Paris} city="Paris"></CardCity>
+              <CardCity photoCity={Bruxelles} city="Bruxelles"></CardCity>
+            </div>
+          </Link>
         </div>
       </div>
     </>
