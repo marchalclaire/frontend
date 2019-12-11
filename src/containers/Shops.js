@@ -60,6 +60,7 @@ const Shops = () => {
         <div className="wrapper-shop">
           <div className="main-container-shop">
             <div className="container-left-shops">
+              {/* création d'un état titre afin de le rendre dynamique selon la page sur laquelle on se trouve (coup de coeur, ville...) */}
               <span className="shop-title">{title}</span>
               <span className="icon-heart1"></span>
             </div>

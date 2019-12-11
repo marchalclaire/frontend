@@ -6,6 +6,7 @@ import Shops from "./containers/Shops";
 import Shop from "./containers/Shop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Profile from "./containers/Profile";
 // import Cookie from "js-cookie";
 
 const App = () => {
@@ -15,8 +16,10 @@ const App = () => {
       {/* <LogIn></LogIn> */}
 
       <Switch>
-        <Route path="/user/profile/:identifiant"></Route>
-
+        {/* <Route path="/user/profile/:identifiant"></Route> */}
+        <Route path="/user/profile">
+          <Profile />
+        </Route>
         <Route path="/user/register"></Route>
 
         {/* ajouter dans Route :identifiant" pour le passage à la page Shop gràce à l'"identifiant" */}

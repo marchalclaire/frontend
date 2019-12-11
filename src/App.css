@@ -40,6 +40,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* pour faire disparaitre la CSS dù au lien, donner une className au lien et noter ceci : */
+.link {
+  text-decoration: inherit;
+  color: inherit;
+}
 
 /* ------------------------------------ HEADER --------------------------------- */
 
@@ -64,13 +69,6 @@
 
 /* ------------------ menu déroulant ----------------- */
 
-.dropdown-container {
-  width: 250px;
-  height: 0px;
-  display: flex;
-  justify-content: center;
-}
-
 .menu-liste-deroulante {
   font-family: "Poppins", sans-serif;
   font-size: 20px;
@@ -85,27 +83,6 @@
   font-weight: bold;
   margin-top: -10px;
 }
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-.dropdown-child {
-  display: none;
-  background-color: var(--grey-rose);
-  /* min-width: 180px; */
-}
-.dropdown-child span {
-  color: white;
-  padding: 20px;
-  font-weight: bold;
-  display: block;
-  margin-top: -50px;
-  margin-bottom: -80px;
-  text-decoration: underline;
-}
-.dropdown:hover .dropdown-child {
-  display: block;
-}
 
 /* ------------------------------------ */
 
@@ -116,15 +93,14 @@
 }
 .icone-profile {
   position: relative;
-  top: 35px;
-  left: -100px;
+  top: 4px;
+  left: -10px;
 }
 .header-title-right {
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   color: var(--light-grey);
-  position: absolute;
 }
 .header-title-right_1 {
   cursor: pointer;
@@ -209,11 +185,7 @@
   height: 360px;
   width: 380px;
 }
-/* pour faire disparaitre la CSS dù au lien, donner une className au lien et noter ceci : */
-.link {
-  text-decoration: inherit;
-  color: inherit;
-}
+
 .img-slide-shop {
   height: 200px;
   width: 380px;
@@ -301,7 +273,7 @@
 .container-left-shop {
   display: flex;
   flex-direction: column;
-  width: 850px;
+  width: 810px;
 }
 .container-right-shop {
   display: flex;
@@ -438,3 +410,70 @@ button :disabled {
 .icon-search:before {
   content: "\e986";
 } */
+
+/* ------------------------------------ PROFILE --------------------------------- */
+.container-main-right-user {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 400px;
+  margin-top: 40px;
+  justify-content: center;
+}
+.container-right-user {
+  display: flex;
+  flex-direction: raw;
+  flex: 1;
+}
+.container-left-user {
+  display: flex;
+  flex-direction: column;
+  width: 742px;
+}
+/* pour obtenir un rond : width = height et border radius = moitié de width (ou de height) */
+.photo-user {
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+  margin: 40px 0px 40px 0px;
+  object-fit: cover;
+}
+.title-username {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--grey);
+  margin-left: 10px;
+}
+.text-user {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--grey-rose);
+  margin: 20px 30px 0px 0px;
+}
+.user-infos-container {
+  margin: 50px 0px 10px -10px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 300px;
+}
+.user-infos-container-left {
+  display: flex;
+  flex-direction: column;
+  width: 130px;
+  height: 250px;
+}
+.user-infos-container-right {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  height: 250px;
+}
+.text-user1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: var(--black);
+  margin: 20px 30px 0px 0px;
+}
