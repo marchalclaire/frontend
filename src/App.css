@@ -371,14 +371,23 @@
   cursor: pointer;
 }
 .shop-list-reviews {
+  flex: 1;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 40px;
+}
+.shop-review {
   background-color: var(--light-grey2);
   flex: 1;
-  border: 1px solid var(--light-grey2);
   padding: 10px 10px 10px 10px;
   border-radius: 8px;
   margin-bottom: 40px;
 }
-
+.shop-comment {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: var(--black);
+  margin: 10px 0px 0px 0px;
+}
 /* ------------------------------------ SHOPS --------------------------------- */
 
 .icon-heart1:before {

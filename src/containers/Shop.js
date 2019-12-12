@@ -6,6 +6,7 @@ import "../App.css";
 
 const Shop = () => {
   const params = useParams();
+  const [isLoading, setIsLoading] = useState(true); // Indicateur de chargement
   const [card, setCard] = useState([]);
 
   //pour afficher les étoiles colorées jaune ou gris en fonction de l'averageRating :
@@ -20,11 +21,13 @@ const Shop = () => {
   }
 
   const fetchData = async () => {
+    setIsLoading(true);
     const response = await axios.get(
       "http://localhost:4000/shop/read?id=" + params.identifiant //URL idem postman
     );
     setCard(response.data);
-    // console.log(response.data);
+    setIsLoading(false);
+    // console.log(response.data.reviews[0]);
   };
   useEffect(() => {
     fetchData();
@@ -64,7 +67,7 @@ const Shop = () => {
                 src={card.photos}
                 alt={card.photos}
               ></img>
-              <span className="shop-reviews">3 reviews</span>
+              <span className="shop-reviews">2 reviews</span>
               <div className="container-stars">{stars}</div>
               <span className="shop-descritpion">{card.description}</span>
             </div>
@@ -72,7 +75,23 @@ const Shop = () => {
               <div className="shop-add-reviews-container">
                 <span className="shop-add-reviews">Post your review</span>
               </div>
-              <div className="shop-list-reviews"></div>
+
+              {isLoading ? (
+                <p>Chargement...</p>
+              ) : (
+                <div className="shop-list-reviews">
+                  {card.reviews.map((review, index) => {
+                    return (
+                      <div className="shop-review">
+                        <div className="shop-rating">
+                          Note: {review.rating}/5
+                        </div>
+                        <div className="shop-comment">{review.comment}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </div>
         </div>
