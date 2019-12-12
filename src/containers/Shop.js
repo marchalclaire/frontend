@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import "../App.css";
+import Review from "../components/Review";
 
 const Shop = () => {
   const params = useParams();
@@ -67,7 +67,9 @@ const Shop = () => {
                 src={card.photos}
                 alt={card.photos}
               ></img>
-              <span className="shop-reviews">2 reviews</span>
+              <span className="shop-reviews">
+                {/* {card.reviews.length} reviews */}3 reviews
+              </span>
               <div className="container-stars">{stars}</div>
               <span className="shop-descritpion">{card.description}</span>
             </div>
@@ -81,14 +83,9 @@ const Shop = () => {
               ) : (
                 <div className="shop-list-reviews">
                   {card.reviews.map((review, index) => {
-                    return (
-                      <div className="shop-review">
-                        <div className="shop-rating">
-                          Note: {review.rating}/5
-                        </div>
-                        <div className="shop-comment">{review.comment}</div>
-                      </div>
-                    );
+                    // Ici le spread va transmettre tout le contenu de `card.review` en tant que props au composant "Review"
+
+                    return <Review key={review.id} {...review} />;
                   })}
                 </div>
               )}

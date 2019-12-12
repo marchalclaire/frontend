@@ -388,6 +388,25 @@
   color: var(--black);
   margin: 10px 0px 0px 0px;
 }
+.photo-user-review {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  /* margin: 10px 0px 10px 0px; */
+  object-fit: cover;
+}
+.shop-review-user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.shop-user-text-comment {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: var(--grey);
+  font-weight: bold;
+}
 /* ------------------------------------ SHOPS --------------------------------- */
 
 .icon-heart1:before {

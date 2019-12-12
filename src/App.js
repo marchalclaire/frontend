@@ -7,6 +7,7 @@ import Shop from "./containers/Shop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Profile from "./containers/Profile";
+
 // import Cookie from "js-cookie";
 
 const App = () => {

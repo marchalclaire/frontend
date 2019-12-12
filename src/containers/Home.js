@@ -13,7 +13,8 @@ const Home = () => {
   const fetchData = async () => {
     //appel au back d'une reuête paginée à 3 article par page:
     const response = await axios.post("http://localhost:4000/shop/findshops", {
-      limit: 3
+      limit: 3,
+      averageRating: 4
     });
     console.log(response.data);
     setCards(response.data);

@@ -28,7 +28,7 @@ const Card = props => {
             <span className="city-slide-shop">{props.city}</span>
             <div className="reviews-stars-container">
               <span className="reviews-slide-shop">
-                {props.averageRating} reviews
+                {props.reviews.length} reviews
               </span>
               <div className="container-stars">{stars}</div>
             </div>
